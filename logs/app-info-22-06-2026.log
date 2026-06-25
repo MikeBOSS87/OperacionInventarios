@@ -1,0 +1,311 @@
+22-06-2026 03:55:20 [background-preinit] INFO   org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+22-06-2026 03:55:20 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Starting CatalogosInventariosApplication using Java 26.0.1 with PID 35528 (C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios\target\classes started by chief in C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios)
+22-06-2026 03:55:20 [main] INFO   com.cat.inv.CatalogosInventariosApplication - No active profile set, falling back to 1 default profile: "default"
+22-06-2026 03:55:21 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+22-06-2026 03:55:21 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+22-06-2026 03:55:21 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8530 (http)
+22-06-2026 03:55:21 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8530"]
+22-06-2026 03:55:21 [main] INFO   org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22-06-2026 03:55:21 [main] INFO   org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.55]
+22-06-2026 03:55:21 [main] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22-06-2026 03:55:21 [main] INFO   org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 823 ms
+22-06-2026 03:55:22 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Starting...
+22-06-2026 03:55:23 [main] INFO   com.zaxxer.hikari.pool.HikariPool - HikariPool-Catalogos - Added connection oracle.jdbc.driver.T4CConnection@20bb85b4
+22-06-2026 03:55:23 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Start completed.
+22-06-2026 03:55:24 [main] INFO   org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+22-06-2026 03:55:24 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8530"]
+22-06-2026 03:55:24 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8530 (http) with context path '/'
+22-06-2026 03:55:24 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Started CatalogosInventariosApplication in 3.714 seconds (process running for 4.137)
+22-06-2026 03:55:48 [http-nio-8530-exec-2] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22-06-2026 03:55:48 [http-nio-8530-exec-2] INFO   org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22-06-2026 03:55:48 [http-nio-8530-exec-2] INFO   org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+22-06-2026 03:55:48 [http-nio-8530-exec-2] INFO  68201851-24e9-4bb0-a0a0-49ce1fad84a4 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=68201851-24e9-4bb0-a0a0-49ce1fad84a4
+22-06-2026 03:55:48 [http-nio-8530-exec-2] INFO  68201851-24e9-4bb0-a0a0-49ce1fad84a4 com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 03:55:51 [http-nio-8530-exec-2] INFO  68201851-24e9-4bb0-a0a0-49ce1fad84a4 com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 03:55:51 [http-nio-8530-exec-2] INFO  68201851-24e9-4bb0-a0a0-49ce1fad84a4 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=68201851-24e9-4bb0-a0a0-49ce1fad84a4 | Tiempo=2369 ms
+22-06-2026 03:56:37 [http-nio-8530-exec-1] INFO  98b5b9ca-6a6c-45b3-a1b6-185be55c2eb5 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=98b5b9ca-6a6c-45b3-a1b6-185be55c2eb5
+22-06-2026 03:56:37 [http-nio-8530-exec-1] INFO  98b5b9ca-6a6c-45b3-a1b6-185be55c2eb5 com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 03:56:38 [http-nio-8530-exec-1] INFO  98b5b9ca-6a6c-45b3-a1b6-185be55c2eb5 com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 03:56:38 [http-nio-8530-exec-1] INFO  98b5b9ca-6a6c-45b3-a1b6-185be55c2eb5 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=98b5b9ca-6a6c-45b3-a1b6-185be55c2eb5 | Tiempo=537 ms
+22-06-2026 03:56:40 [http-nio-8530-exec-4] INFO  5d8922b8-7e77-44a3-91f4-da8bdb4edcac com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=5d8922b8-7e77-44a3-91f4-da8bdb4edcac
+22-06-2026 03:56:40 [http-nio-8530-exec-4] INFO  5d8922b8-7e77-44a3-91f4-da8bdb4edcac com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 03:56:40 [http-nio-8530-exec-4] INFO  5d8922b8-7e77-44a3-91f4-da8bdb4edcac com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 03:56:40 [http-nio-8530-exec-4] INFO  5d8922b8-7e77-44a3-91f4-da8bdb4edcac com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=5d8922b8-7e77-44a3-91f4-da8bdb4edcac | Tiempo=537 ms
+22-06-2026 03:56:42 [http-nio-8530-exec-5] INFO  6cb45843-7e3a-4f75-bf4d-84591f740e88 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=6cb45843-7e3a-4f75-bf4d-84591f740e88
+22-06-2026 03:56:42 [http-nio-8530-exec-5] INFO  6cb45843-7e3a-4f75-bf4d-84591f740e88 com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 03:56:42 [http-nio-8530-exec-5] INFO  6cb45843-7e3a-4f75-bf4d-84591f740e88 com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 03:56:42 [http-nio-8530-exec-5] INFO  6cb45843-7e3a-4f75-bf4d-84591f740e88 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=6cb45843-7e3a-4f75-bf4d-84591f740e88 | Tiempo=536 ms
+22-06-2026 03:58:13 [http-nio-8530-exec-3] INFO  949d18a4-81dc-44b3-938c-86357ae2dc9a com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=949d18a4-81dc-44b3-938c-86357ae2dc9a
+22-06-2026 03:58:13 [http-nio-8530-exec-3] INFO  949d18a4-81dc-44b3-938c-86357ae2dc9a com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 03:58:14 [http-nio-8530-exec-3] INFO  949d18a4-81dc-44b3-938c-86357ae2dc9a com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 03:58:14 [http-nio-8530-exec-3] INFO  949d18a4-81dc-44b3-938c-86357ae2dc9a com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=949d18a4-81dc-44b3-938c-86357ae2dc9a | Tiempo=532 ms
+22-06-2026 03:58:24 [http-nio-8530-exec-6] INFO  7dbe5312-a0a9-45b5-a5d7-e69141ba4bb9 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=7dbe5312-a0a9-45b5-a5d7-e69141ba4bb9
+22-06-2026 03:58:24 [http-nio-8530-exec-6] INFO  7dbe5312-a0a9-45b5-a5d7-e69141ba4bb9 com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 03:58:24 [http-nio-8530-exec-6] INFO  7dbe5312-a0a9-45b5-a5d7-e69141ba4bb9 com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 03:58:24 [http-nio-8530-exec-6] INFO  7dbe5312-a0a9-45b5-a5d7-e69141ba4bb9 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=7dbe5312-a0a9-45b5-a5d7-e69141ba4bb9 | Tiempo=538 ms
+22-06-2026 03:58:29 [http-nio-8530-exec-7] INFO  b9bbc2dd-1465-41af-a759-25dce50c7d8f com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=b9bbc2dd-1465-41af-a759-25dce50c7d8f
+22-06-2026 03:58:29 [http-nio-8530-exec-7] INFO  b9bbc2dd-1465-41af-a759-25dce50c7d8f com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 03:58:30 [http-nio-8530-exec-7] INFO  b9bbc2dd-1465-41af-a759-25dce50c7d8f com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 03:58:30 [http-nio-8530-exec-7] INFO  b9bbc2dd-1465-41af-a759-25dce50c7d8f com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=b9bbc2dd-1465-41af-a759-25dce50c7d8f | Tiempo=534 ms
+22-06-2026 03:59:31 [http-nio-8530-exec-8] INFO  c6d8ba4b-fbf0-499f-b98c-e20dfeeb2e49 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=c6d8ba4b-fbf0-499f-b98c-e20dfeeb2e49
+22-06-2026 03:59:31 [http-nio-8530-exec-8] INFO  c6d8ba4b-fbf0-499f-b98c-e20dfeeb2e49 com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 03:59:32 [http-nio-8530-exec-8] INFO  c6d8ba4b-fbf0-499f-b98c-e20dfeeb2e49 com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 03:59:32 [http-nio-8530-exec-8] INFO  c6d8ba4b-fbf0-499f-b98c-e20dfeeb2e49 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=c6d8ba4b-fbf0-499f-b98c-e20dfeeb2e49 | Tiempo=539 ms
+22-06-2026 03:59:38 [RMI TCP Connection(8)-127.0.0.1] INFO   org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+22-06-2026 03:59:38 [RMI TCP Connection(8)-127.0.0.1] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+22-06-2026 03:59:38 [tomcat-shutdown] INFO   org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8530"]
+22-06-2026 03:59:38 [tomcat-shutdown] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+22-06-2026 03:59:38 [RMI TCP Connection(8)-127.0.0.1] INFO   org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8530"]
+22-06-2026 03:59:38 [RMI TCP Connection(8)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown initiated...
+22-06-2026 03:59:38 [RMI TCP Connection(8)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown completed.
+22-06-2026 18:43:43 [background-preinit] INFO   org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+22-06-2026 18:43:43 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Starting CatalogosInventariosApplication using Java 26.0.1 with PID 23316 (C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios\target\classes started by chief in C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios)
+22-06-2026 18:43:43 [main] INFO   com.cat.inv.CatalogosInventariosApplication - No active profile set, falling back to 1 default profile: "default"
+22-06-2026 18:43:44 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+22-06-2026 18:43:44 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 JDBC repository interfaces.
+22-06-2026 18:43:44 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8530 (http)
+22-06-2026 18:43:44 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8530"]
+22-06-2026 18:43:44 [main] INFO   org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22-06-2026 18:43:44 [main] INFO   org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.55]
+22-06-2026 18:43:44 [main] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22-06-2026 18:43:44 [main] INFO   org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 954 ms
+22-06-2026 18:43:45 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Starting...
+22-06-2026 18:43:47 [main] INFO   com.zaxxer.hikari.pool.HikariPool - HikariPool-Catalogos - Added connection oracle.jdbc.driver.T4CConnection@6a8a551e
+22-06-2026 18:43:47 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Start completed.
+22-06-2026 18:43:47 [main] INFO   org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+22-06-2026 18:43:47 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8530"]
+22-06-2026 18:43:47 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8530 (http) with context path '/'
+22-06-2026 18:43:47 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Started CatalogosInventariosApplication in 4.075 seconds (process running for 4.461)
+22-06-2026 18:44:13 [http-nio-8530-exec-1] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22-06-2026 18:44:13 [http-nio-8530-exec-1] INFO   org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22-06-2026 18:44:13 [http-nio-8530-exec-1] INFO   org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+22-06-2026 18:44:13 [http-nio-8530-exec-1] INFO  5cfe4705-6a4a-4df9-8b00-874d3882fdf3 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=5cfe4705-6a4a-4df9-8b00-874d3882fdf3
+22-06-2026 18:44:13 [http-nio-8530-exec-1] INFO  5cfe4705-6a4a-4df9-8b00-874d3882fdf3 com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 18:44:15 [http-nio-8530-exec-1] INFO  5cfe4705-6a4a-4df9-8b00-874d3882fdf3 com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 18:44:15 [http-nio-8530-exec-1] INFO  5cfe4705-6a4a-4df9-8b00-874d3882fdf3 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=5cfe4705-6a4a-4df9-8b00-874d3882fdf3 | Tiempo=2380 ms
+22-06-2026 18:46:25 [http-nio-8530-exec-2] INFO  79dccc2e-1073-4a03-9a1e-4bc83c0eb5d8 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=79dccc2e-1073-4a03-9a1e-4bc83c0eb5d8
+22-06-2026 18:46:25 [http-nio-8530-exec-2] INFO  79dccc2e-1073-4a03-9a1e-4bc83c0eb5d8 com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 18:46:25 [http-nio-8530-exec-2] INFO  79dccc2e-1073-4a03-9a1e-4bc83c0eb5d8 com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 18:46:26 [http-nio-8530-exec-2] INFO  79dccc2e-1073-4a03-9a1e-4bc83c0eb5d8 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=79dccc2e-1073-4a03-9a1e-4bc83c0eb5d8 | Tiempo=529 ms
+22-06-2026 18:46:45 [RMI TCP Connection(5)-127.0.0.1] INFO   org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+22-06-2026 18:46:45 [RMI TCP Connection(5)-127.0.0.1] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+22-06-2026 18:46:45 [tomcat-shutdown] INFO   org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8530"]
+22-06-2026 18:46:45 [tomcat-shutdown] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+22-06-2026 18:46:45 [RMI TCP Connection(5)-127.0.0.1] INFO   org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8530"]
+22-06-2026 18:46:45 [RMI TCP Connection(5)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown initiated...
+22-06-2026 18:46:46 [RMI TCP Connection(5)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown completed.
+22-06-2026 19:54:43 [background-preinit] INFO   org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+22-06-2026 19:54:43 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Starting CatalogosInventariosApplication using Java 26.0.1 with PID 7916 (C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios\target\classes started by chief in C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios)
+22-06-2026 19:54:43 [main] INFO   com.cat.inv.CatalogosInventariosApplication - No active profile set, falling back to 1 default profile: "default"
+22-06-2026 19:54:44 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+22-06-2026 19:54:44 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+22-06-2026 19:54:44 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8530 (http)
+22-06-2026 19:54:44 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8530"]
+22-06-2026 19:54:44 [main] INFO   org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22-06-2026 19:54:44 [main] INFO   org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.55]
+22-06-2026 19:54:44 [main] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22-06-2026 19:54:44 [main] INFO   org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1749 ms
+22-06-2026 19:54:45 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Starting...
+22-06-2026 19:54:47 [main] INFO   com.zaxxer.hikari.pool.HikariPool - HikariPool-Catalogos - Added connection oracle.jdbc.driver.T4CConnection@7faa0680
+22-06-2026 19:54:47 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Start completed.
+22-06-2026 19:54:48 [main] INFO   org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+22-06-2026 19:54:48 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8530"]
+22-06-2026 19:54:48 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8530 (http) with context path '/'
+22-06-2026 19:54:48 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Started CatalogosInventariosApplication in 5.892 seconds (process running for 6.615)
+22-06-2026 19:55:25 [http-nio-8530-exec-2] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22-06-2026 19:55:25 [http-nio-8530-exec-2] INFO   org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22-06-2026 19:55:25 [http-nio-8530-exec-2] INFO   org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+22-06-2026 19:55:25 [http-nio-8530-exec-2] INFO  a716559c-10a2-430d-93b9-d8c75cced11e com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=a716559c-10a2-430d-93b9-d8c75cced11e
+22-06-2026 19:55:25 [http-nio-8530-exec-2] INFO  a716559c-10a2-430d-93b9-d8c75cced11e com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=a716559c-10a2-430d-93b9-d8c75cced11e | Tiempo=131 ms
+22-06-2026 19:57:51 [http-nio-8530-exec-1] INFO  59a70c13-40ab-4703-9542-cc622ca4fce4 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=59a70c13-40ab-4703-9542-cc622ca4fce4
+22-06-2026 19:57:51 [http-nio-8530-exec-1] INFO  59a70c13-40ab-4703-9542-cc622ca4fce4 com.cat.inv.servicio.CatalogoInv - 🔐 Validando credenciales...
+22-06-2026 19:57:51 [http-nio-8530-exec-1] INFO  59a70c13-40ab-4703-9542-cc622ca4fce4 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=59a70c13-40ab-4703-9542-cc622ca4fce4 | Tiempo=122 ms
+22-06-2026 19:58:37 [http-nio-8530-exec-4] INFO  46a4d5e7-fac7-4997-b99b-db8ac3c91cff com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=46a4d5e7-fac7-4997-b99b-db8ac3c91cff
+22-06-2026 19:58:37 [http-nio-8530-exec-4] INFO  46a4d5e7-fac7-4997-b99b-db8ac3c91cff com.cat.inv.servicio.CatalogoInv - 🔐 Validando credenciales...
+22-06-2026 19:58:37 [http-nio-8530-exec-4] INFO  46a4d5e7-fac7-4997-b99b-db8ac3c91cff com.cat.inv.servicio.CatalogoInv - ✔ Credenciales válidas, consultando catálogo...
+22-06-2026 19:58:37 [http-nio-8530-exec-4] INFO  46a4d5e7-fac7-4997-b99b-db8ac3c91cff com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 19:58:38 [http-nio-8530-exec-4] INFO  46a4d5e7-fac7-4997-b99b-db8ac3c91cff com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 19:58:38 [http-nio-8530-exec-4] INFO  46a4d5e7-fac7-4997-b99b-db8ac3c91cff com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=46a4d5e7-fac7-4997-b99b-db8ac3c91cff | Tiempo=1564 ms
+22-06-2026 19:58:54 [http-nio-8530-exec-3] INFO  40b3449b-2110-4f1d-8154-ec5d2d203be4 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=40b3449b-2110-4f1d-8154-ec5d2d203be4
+22-06-2026 19:58:54 [http-nio-8530-exec-3] INFO  40b3449b-2110-4f1d-8154-ec5d2d203be4 com.cat.inv.servicio.CatalogoInv - 🔐 Validando credenciales...
+22-06-2026 19:58:54 [http-nio-8530-exec-3] INFO  40b3449b-2110-4f1d-8154-ec5d2d203be4 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=40b3449b-2110-4f1d-8154-ec5d2d203be4 | Tiempo=5 ms
+22-06-2026 19:59:31 [http-nio-8530-exec-5] INFO  9bf2616b-5926-492e-bdeb-5a9eb09dc3f9 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=9bf2616b-5926-492e-bdeb-5a9eb09dc3f9
+22-06-2026 19:59:31 [http-nio-8530-exec-5] INFO  9bf2616b-5926-492e-bdeb-5a9eb09dc3f9 com.cat.inv.servicio.CatalogoInv - 🔐 Validando credenciales...
+22-06-2026 19:59:31 [http-nio-8530-exec-5] INFO  9bf2616b-5926-492e-bdeb-5a9eb09dc3f9 com.cat.inv.servicio.CatalogoInv - ✔ Credenciales válidas, consultando catálogo...
+22-06-2026 19:59:31 [http-nio-8530-exec-5] INFO  9bf2616b-5926-492e-bdeb-5a9eb09dc3f9 com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 19:59:32 [http-nio-8530-exec-5] INFO  9bf2616b-5926-492e-bdeb-5a9eb09dc3f9 com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 19:59:32 [http-nio-8530-exec-5] INFO  9bf2616b-5926-492e-bdeb-5a9eb09dc3f9 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=9bf2616b-5926-492e-bdeb-5a9eb09dc3f9 | Tiempo=539 ms
+22-06-2026 19:59:33 [http-nio-8530-exec-7] INFO  b31296ef-3b6d-4fd0-81f8-60e4780ea04b com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=b31296ef-3b6d-4fd0-81f8-60e4780ea04b
+22-06-2026 19:59:33 [http-nio-8530-exec-7] INFO  b31296ef-3b6d-4fd0-81f8-60e4780ea04b com.cat.inv.servicio.CatalogoInv - 🔐 Validando credenciales...
+22-06-2026 19:59:33 [http-nio-8530-exec-7] INFO  b31296ef-3b6d-4fd0-81f8-60e4780ea04b com.cat.inv.servicio.CatalogoInv - ✔ Credenciales válidas, consultando catálogo...
+22-06-2026 19:59:33 [http-nio-8530-exec-7] INFO  b31296ef-3b6d-4fd0-81f8-60e4780ea04b com.cat.inv.repositorio.ConsultaCatalogo - Ejecutando SP de consulta a la BD
+22-06-2026 19:59:33 [http-nio-8530-exec-7] INFO  b31296ef-3b6d-4fd0-81f8-60e4780ea04b com.cat.inv.servicio.CatalogoInv - 📤 Consulta completada. Registros obtenidos: 3
+22-06-2026 19:59:33 [http-nio-8530-exec-7] INFO  b31296ef-3b6d-4fd0-81f8-60e4780ea04b com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=b31296ef-3b6d-4fd0-81f8-60e4780ea04b | Tiempo=537 ms
+22-06-2026 20:00:05 [http-nio-8530-exec-6] INFO  102644c0-300d-407e-9a49-95b6d014a8f5 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=127.0.0.1 | Método=GET | Endpoint=/Inventario/v1/Catalogos/Consulta/Catalogo | RequestId=102644c0-300d-407e-9a49-95b6d014a8f5
+22-06-2026 20:00:05 [http-nio-8530-exec-6] INFO  102644c0-300d-407e-9a49-95b6d014a8f5 com.cat.inv.servicio.CatalogoInv - 🔐 Validando credenciales...
+22-06-2026 20:00:05 [http-nio-8530-exec-6] INFO  102644c0-300d-407e-9a49-95b6d014a8f5 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=102644c0-300d-407e-9a49-95b6d014a8f5 | Tiempo=4 ms
+22-06-2026 20:04:28 [RMI TCP Connection(14)-127.0.0.1] INFO   org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+22-06-2026 20:04:28 [RMI TCP Connection(14)-127.0.0.1] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+22-06-2026 20:04:28 [tomcat-shutdown] INFO   org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8530"]
+22-06-2026 20:04:28 [tomcat-shutdown] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+22-06-2026 20:04:28 [RMI TCP Connection(14)-127.0.0.1] INFO   org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8530"]
+22-06-2026 20:04:28 [RMI TCP Connection(14)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown initiated...
+22-06-2026 20:04:28 [RMI TCP Connection(14)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown completed.
+22-06-2026 22:10:03 [background-preinit] INFO   org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+22-06-2026 22:10:03 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Starting CatalogosInventariosApplication using Java 26.0.1 with PID 16356 (C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios\target\classes started by chief in C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios)
+22-06-2026 22:10:03 [main] INFO   com.cat.inv.CatalogosInventariosApplication - No active profile set, falling back to 1 default profile: "default"
+22-06-2026 22:10:04 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+22-06-2026 22:10:04 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+22-06-2026 22:10:04 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8530 (http)
+22-06-2026 22:10:04 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:10:04 [main] INFO   org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22-06-2026 22:10:04 [main] INFO   org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.55]
+22-06-2026 22:10:04 [main] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22-06-2026 22:10:04 [main] INFO   org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1677 ms
+22-06-2026 22:10:05 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Starting...
+22-06-2026 22:10:08 [main] INFO   com.zaxxer.hikari.pool.HikariPool - HikariPool-Catalogos - Added connection oracle.jdbc.driver.T4CConnection@6903ed0e
+22-06-2026 22:10:08 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Start completed.
+22-06-2026 22:10:08 [main] INFO   org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+22-06-2026 22:10:08 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:10:08 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8530 (http) with context path '/'
+22-06-2026 22:10:08 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Started CatalogosInventariosApplication in 6.041 seconds (process running for 6.748)
+22-06-2026 22:10:41 [http-nio-8530-exec-1] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22-06-2026 22:10:41 [http-nio-8530-exec-1] INFO   org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22-06-2026 22:10:41 [http-nio-8530-exec-1] INFO   org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-1] INFO  a7eeed66-ca88-4123-897e-34124bfde479 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/index.html | RequestId=a7eeed66-ca88-4123-897e-34124bfde479
+22-06-2026 22:10:41 [http-nio-8530-exec-1] INFO  a7eeed66-ca88-4123-897e-34124bfde479 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=a7eeed66-ca88-4123-897e-34124bfde479 | Tiempo=60 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-2] INFO  24c57e2e-0d17-433b-aa51-a584079b5ddc com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui.css | RequestId=24c57e2e-0d17-433b-aa51-a584079b5ddc
+22-06-2026 22:10:41 [http-nio-8530-exec-3] INFO  14972792-3640-4006-898c-5feeaa97758b com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/index.css | RequestId=14972792-3640-4006-898c-5feeaa97758b
+22-06-2026 22:10:41 [http-nio-8530-exec-5] INFO  f51b9ff9-25e7-4ac5-a774-993a0ca5d4e3 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui-bundle.js | RequestId=f51b9ff9-25e7-4ac5-a774-993a0ca5d4e3
+22-06-2026 22:10:41 [http-nio-8530-exec-6] INFO  2c0a511e-ccda-4c05-9e33-58abf2cf939f com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-initializer.js | RequestId=2c0a511e-ccda-4c05-9e33-58abf2cf939f
+22-06-2026 22:10:41 [http-nio-8530-exec-4] INFO  a3f0f894-e85c-4bd0-94e2-c0ec1e8ca4f7 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui-standalone-preset.js | RequestId=a3f0f894-e85c-4bd0-94e2-c0ec1e8ca4f7
+22-06-2026 22:10:41 [http-nio-8530-exec-3] INFO  14972792-3640-4006-898c-5feeaa97758b com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=14972792-3640-4006-898c-5feeaa97758b | Tiempo=2 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-2] INFO  24c57e2e-0d17-433b-aa51-a584079b5ddc com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=24c57e2e-0d17-433b-aa51-a584079b5ddc | Tiempo=4 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-4] INFO  a3f0f894-e85c-4bd0-94e2-c0ec1e8ca4f7 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=a3f0f894-e85c-4bd0-94e2-c0ec1e8ca4f7 | Tiempo=8 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-5] INFO  f51b9ff9-25e7-4ac5-a774-993a0ca5d4e3 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=f51b9ff9-25e7-4ac5-a774-993a0ca5d4e3 | Tiempo=20 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-6] INFO  2c0a511e-ccda-4c05-9e33-58abf2cf939f com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=2c0a511e-ccda-4c05-9e33-58abf2cf939f | Tiempo=42 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-7] INFO  d6fd64b4-b579-471d-b137-d252822b0c7f com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs/swagger-config | RequestId=d6fd64b4-b579-471d-b137-d252822b0c7f
+22-06-2026 22:10:41 [http-nio-8530-exec-8] INFO  637b4bc4-015d-4194-aaba-dd47e1457401 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/favicon-32x32.png | RequestId=637b4bc4-015d-4194-aaba-dd47e1457401
+22-06-2026 22:10:41 [http-nio-8530-exec-8] INFO  637b4bc4-015d-4194-aaba-dd47e1457401 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=637b4bc4-015d-4194-aaba-dd47e1457401 | Tiempo=3 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-7] INFO  d6fd64b4-b579-471d-b137-d252822b0c7f com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=d6fd64b4-b579-471d-b137-d252822b0c7f | Tiempo=48 ms
+22-06-2026 22:10:41 [http-nio-8530-exec-10] INFO  413e56cb-ab41-4de6-9a65-ddbaf359c10d com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs | RequestId=413e56cb-ab41-4de6-9a65-ddbaf359c10d
+22-06-2026 22:10:42 [http-nio-8530-exec-10] INFO  413e56cb-ab41-4de6-9a65-ddbaf359c10d com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=413e56cb-ab41-4de6-9a65-ddbaf359c10d | Tiempo=226 ms
+22-06-2026 22:11:24 [http-nio-8530-exec-9] INFO  87577cee-1325-4fbc-abdc-270a62f6cece com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui.html | RequestId=87577cee-1325-4fbc-abdc-270a62f6cece
+22-06-2026 22:11:24 [http-nio-8530-exec-9] INFO  87577cee-1325-4fbc-abdc-270a62f6cece com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=87577cee-1325-4fbc-abdc-270a62f6cece | Tiempo=18 ms
+22-06-2026 22:11:24 [http-nio-8530-exec-1] INFO  5beef6b4-838d-4915-a687-78219b85ef27 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-initializer.js | RequestId=5beef6b4-838d-4915-a687-78219b85ef27
+22-06-2026 22:11:24 [http-nio-8530-exec-1] INFO  5beef6b4-838d-4915-a687-78219b85ef27 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=5beef6b4-838d-4915-a687-78219b85ef27 | Tiempo=3 ms
+22-06-2026 22:11:24 [http-nio-8530-exec-3] INFO  9af906e2-6bc6-4443-bc04-5f6c26f60465 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs/swagger-config | RequestId=9af906e2-6bc6-4443-bc04-5f6c26f60465
+22-06-2026 22:11:24 [http-nio-8530-exec-3] INFO  9af906e2-6bc6-4443-bc04-5f6c26f60465 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=9af906e2-6bc6-4443-bc04-5f6c26f60465 | Tiempo=3 ms
+22-06-2026 22:11:24 [http-nio-8530-exec-2] INFO  425d4ea1-92b4-4d56-bea5-7531b62ef360 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs | RequestId=425d4ea1-92b4-4d56-bea5-7531b62ef360
+22-06-2026 22:11:24 [http-nio-8530-exec-2] INFO  425d4ea1-92b4-4d56-bea5-7531b62ef360 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=425d4ea1-92b4-4d56-bea5-7531b62ef360 | Tiempo=40 ms
+22-06-2026 22:11:39 [http-nio-8530-exec-4] INFO  9711ce41-0a15-47e3-b32e-8331e8258fe1 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs | RequestId=9711ce41-0a15-47e3-b32e-8331e8258fe1
+22-06-2026 22:11:39 [http-nio-8530-exec-4] INFO  9711ce41-0a15-47e3-b32e-8331e8258fe1 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=9711ce41-0a15-47e3-b32e-8331e8258fe1 | Tiempo=38 ms
+22-06-2026 22:11:39 [http-nio-8530-exec-5] INFO  e1a9b3fc-2e14-40ce-a6aa-9e752eb3aac5 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/favicon.ico | RequestId=e1a9b3fc-2e14-40ce-a6aa-9e752eb3aac5
+22-06-2026 22:11:39 [http-nio-8530-exec-5] INFO  e1a9b3fc-2e14-40ce-a6aa-9e752eb3aac5 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=e1a9b3fc-2e14-40ce-a6aa-9e752eb3aac5 | Tiempo=13 ms
+22-06-2026 22:12:50 [RMI TCP Connection(6)-127.0.0.1] INFO   org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+22-06-2026 22:12:50 [RMI TCP Connection(6)-127.0.0.1] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+22-06-2026 22:12:50 [tomcat-shutdown] INFO   org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:12:50 [tomcat-shutdown] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+22-06-2026 22:12:50 [RMI TCP Connection(6)-127.0.0.1] INFO   org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:12:50 [RMI TCP Connection(6)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown initiated...
+22-06-2026 22:12:50 [RMI TCP Connection(6)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown completed.
+22-06-2026 22:19:09 [background-preinit] INFO   org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+22-06-2026 22:19:09 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Starting CatalogosInventariosApplication using Java 26.0.1 with PID 23052 (C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios\target\classes started by chief in C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios)
+22-06-2026 22:19:09 [main] INFO   com.cat.inv.CatalogosInventariosApplication - No active profile set, falling back to 1 default profile: "default"
+22-06-2026 22:19:10 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+22-06-2026 22:19:10 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+22-06-2026 22:19:11 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8530 (http)
+22-06-2026 22:19:11 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:19:11 [main] INFO   org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22-06-2026 22:19:11 [main] INFO   org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.55]
+22-06-2026 22:19:11 [main] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22-06-2026 22:19:11 [main] INFO   org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1254 ms
+22-06-2026 22:19:11 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Starting...
+22-06-2026 22:19:13 [main] INFO   com.zaxxer.hikari.pool.HikariPool - HikariPool-Catalogos - Added connection oracle.jdbc.driver.T4CConnection@752973de
+22-06-2026 22:19:13 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Start completed.
+22-06-2026 22:19:14 [main] INFO   org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+22-06-2026 22:19:14 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:19:14 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8530 (http) with context path '/'
+22-06-2026 22:19:14 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Started CatalogosInventariosApplication in 4.796 seconds (process running for 5.39)
+22-06-2026 22:19:45 [http-nio-8530-exec-1] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22-06-2026 22:19:45 [http-nio-8530-exec-1] INFO   org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22-06-2026 22:19:45 [http-nio-8530-exec-1] INFO   org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-1] INFO  3915e5b9-6169-48db-8712-2890f970c4bb com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/index.html | RequestId=3915e5b9-6169-48db-8712-2890f970c4bb
+22-06-2026 22:19:45 [http-nio-8530-exec-1] INFO  3915e5b9-6169-48db-8712-2890f970c4bb com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=3915e5b9-6169-48db-8712-2890f970c4bb | Tiempo=31 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-3] INFO  48707360-d292-4dc5-832f-b15aa27a2cd3 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui.css | RequestId=48707360-d292-4dc5-832f-b15aa27a2cd3
+22-06-2026 22:19:45 [http-nio-8530-exec-2] INFO  8b9c5ed8-f5a1-4e73-9fcf-2783fdfcf114 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/index.css | RequestId=8b9c5ed8-f5a1-4e73-9fcf-2783fdfcf114
+22-06-2026 22:19:45 [http-nio-8530-exec-4] INFO  bfcafc9f-c871-481d-a6f7-94bab00fc226 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui-bundle.js | RequestId=bfcafc9f-c871-481d-a6f7-94bab00fc226
+22-06-2026 22:19:45 [http-nio-8530-exec-5] INFO  44a5b55e-15db-46e0-b171-31a71742696d com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui-standalone-preset.js | RequestId=44a5b55e-15db-46e0-b171-31a71742696d
+22-06-2026 22:19:45 [http-nio-8530-exec-2] INFO  8b9c5ed8-f5a1-4e73-9fcf-2783fdfcf114 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=8b9c5ed8-f5a1-4e73-9fcf-2783fdfcf114 | Tiempo=2 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-3] INFO  48707360-d292-4dc5-832f-b15aa27a2cd3 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=48707360-d292-4dc5-832f-b15aa27a2cd3 | Tiempo=2 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-4] INFO  bfcafc9f-c871-481d-a6f7-94bab00fc226 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=bfcafc9f-c871-481d-a6f7-94bab00fc226 | Tiempo=2 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-6] INFO  8cabb4e5-622a-47f5-be74-8c9fb34f2539 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-initializer.js | RequestId=8cabb4e5-622a-47f5-be74-8c9fb34f2539
+22-06-2026 22:19:45 [http-nio-8530-exec-5] INFO  44a5b55e-15db-46e0-b171-31a71742696d com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=44a5b55e-15db-46e0-b171-31a71742696d | Tiempo=2 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-6] INFO  8cabb4e5-622a-47f5-be74-8c9fb34f2539 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=8cabb4e5-622a-47f5-be74-8c9fb34f2539 | Tiempo=36 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-7] INFO  f8f750c3-4d59-41c3-9b12-4a04c4b9fa88 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs/swagger-config | RequestId=f8f750c3-4d59-41c3-9b12-4a04c4b9fa88
+22-06-2026 22:19:45 [http-nio-8530-exec-8] INFO  43a8613c-402d-435b-80d3-cc36604eb777 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/favicon-32x32.png | RequestId=43a8613c-402d-435b-80d3-cc36604eb777
+22-06-2026 22:19:45 [http-nio-8530-exec-8] INFO  43a8613c-402d-435b-80d3-cc36604eb777 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=43a8613c-402d-435b-80d3-cc36604eb777 | Tiempo=2 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-7] INFO  f8f750c3-4d59-41c3-9b12-4a04c4b9fa88 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=f8f750c3-4d59-41c3-9b12-4a04c4b9fa88 | Tiempo=44 ms
+22-06-2026 22:19:45 [http-nio-8530-exec-10] INFO  f48ed0f4-6982-4e52-8ec5-f61f2e6618b0 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs | RequestId=f48ed0f4-6982-4e52-8ec5-f61f2e6618b0
+22-06-2026 22:19:45 [http-nio-8530-exec-10] INFO  f48ed0f4-6982-4e52-8ec5-f61f2e6618b0 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=f48ed0f4-6982-4e52-8ec5-f61f2e6618b0 | Tiempo=202 ms
+22-06-2026 22:19:53 [http-nio-8530-exec-9] INFO  8578daba-9b5f-4d3e-a2fe-c68def73d5ea com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/favicon.ico | RequestId=8578daba-9b5f-4d3e-a2fe-c68def73d5ea
+22-06-2026 22:19:53 [http-nio-8530-exec-9] INFO  8578daba-9b5f-4d3e-a2fe-c68def73d5ea com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=8578daba-9b5f-4d3e-a2fe-c68def73d5ea | Tiempo=12 ms
+22-06-2026 22:19:56 [http-nio-8530-exec-1] INFO  29a253a2-28b0-4b2b-98cd-a2af26953928 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/index.html | RequestId=29a253a2-28b0-4b2b-98cd-a2af26953928
+22-06-2026 22:19:56 [http-nio-8530-exec-1] INFO  29a253a2-28b0-4b2b-98cd-a2af26953928 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=29a253a2-28b0-4b2b-98cd-a2af26953928 | Tiempo=2 ms
+22-06-2026 22:19:56 [http-nio-8530-exec-2] INFO  f9b64d91-4e50-4cc4-a82f-469a0983e493 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-initializer.js | RequestId=f9b64d91-4e50-4cc4-a82f-469a0983e493
+22-06-2026 22:19:56 [http-nio-8530-exec-2] INFO  f9b64d91-4e50-4cc4-a82f-469a0983e493 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=f9b64d91-4e50-4cc4-a82f-469a0983e493 | Tiempo=2 ms
+22-06-2026 22:19:56 [http-nio-8530-exec-3] INFO  f0f6395f-0f31-4a0e-880e-cf7ab1c092ef com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs/swagger-config | RequestId=f0f6395f-0f31-4a0e-880e-cf7ab1c092ef
+22-06-2026 22:19:56 [http-nio-8530-exec-3] INFO  f0f6395f-0f31-4a0e-880e-cf7ab1c092ef com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=f0f6395f-0f31-4a0e-880e-cf7ab1c092ef | Tiempo=2 ms
+22-06-2026 22:19:56 [http-nio-8530-exec-4] INFO  01adf53f-334f-4dcf-9786-7b6f1519e941 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs | RequestId=01adf53f-334f-4dcf-9786-7b6f1519e941
+22-06-2026 22:19:56 [http-nio-8530-exec-4] INFO  01adf53f-334f-4dcf-9786-7b6f1519e941 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=01adf53f-334f-4dcf-9786-7b6f1519e941 | Tiempo=38 ms
+22-06-2026 22:25:53 [RMI TCP Connection(9)-127.0.0.1] INFO   org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+22-06-2026 22:25:53 [RMI TCP Connection(9)-127.0.0.1] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+22-06-2026 22:25:53 [tomcat-shutdown] INFO   org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:25:53 [tomcat-shutdown] INFO   org.springframework.boot.web.embedded.tomcat.GracefulShutdown - Graceful shutdown complete
+22-06-2026 22:25:53 [RMI TCP Connection(9)-127.0.0.1] INFO   org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:25:53 [RMI TCP Connection(9)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown initiated...
+22-06-2026 22:25:53 [RMI TCP Connection(9)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown completed.
+22-06-2026 22:28:39 [background-preinit] INFO   org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+22-06-2026 22:28:39 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Starting CatalogosInventariosApplication using Java 26.0.1 with PID 22764 (C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios\target\classes started by chief in C:\Users\chief\OneDrive\Documentos\ProyectosEclipse\CatalogosInventarios)
+22-06-2026 22:28:39 [main] INFO   com.cat.inv.CatalogosInventariosApplication - No active profile set, falling back to 1 default profile: "default"
+22-06-2026 22:28:40 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+22-06-2026 22:28:40 [main] INFO   org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+22-06-2026 22:28:40 [main] INFO   org.springframework.ws.soap.addressing.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+22-06-2026 22:28:40 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8530 (http)
+22-06-2026 22:28:40 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:28:40 [main] INFO   org.apache.catalina.core.StandardService - Starting service [Tomcat]
+22-06-2026 22:28:40 [main] INFO   org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+22-06-2026 22:28:40 [main] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22-06-2026 22:28:40 [main] INFO   org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1219 ms
+22-06-2026 22:28:41 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Starting...
+22-06-2026 22:28:43 [main] INFO   com.zaxxer.hikari.pool.HikariPool - HikariPool-Catalogos - Added connection oracle.jdbc.driver.T4CConnection@328e4ec2
+22-06-2026 22:28:43 [main] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Start completed.
+22-06-2026 22:28:43 [main] INFO   org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:28:43 [main] INFO   org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8530 (http) with context path '/'
+22-06-2026 22:28:43 [main] INFO   com.cat.inv.CatalogosInventariosApplication - Started CatalogosInventariosApplication in 4.762 seconds (process running for 5.352)
+22-06-2026 22:29:08 [http-nio-8530-exec-1] INFO   org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22-06-2026 22:29:08 [http-nio-8530-exec-1] INFO   org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22-06-2026 22:29:08 [http-nio-8530-exec-1] INFO   org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-1] INFO  7d0b7081-51c0-442e-9016-f4227c499855 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/index.html | RequestId=7d0b7081-51c0-442e-9016-f4227c499855
+22-06-2026 22:29:08 [http-nio-8530-exec-1] INFO  7d0b7081-51c0-442e-9016-f4227c499855 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=7d0b7081-51c0-442e-9016-f4227c499855 | Tiempo=40 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-2] INFO  6188c1a1-7fd7-42ac-b907-a3b0f0fdd9f0 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui.css | RequestId=6188c1a1-7fd7-42ac-b907-a3b0f0fdd9f0
+22-06-2026 22:29:08 [http-nio-8530-exec-4] INFO  fc15f7ff-4bcd-49a8-a859-78bdab094ea7 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/index.css | RequestId=fc15f7ff-4bcd-49a8-a859-78bdab094ea7
+22-06-2026 22:29:08 [http-nio-8530-exec-3] INFO  f569093e-1697-42ec-af4c-1d7ce11d64cc com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui-bundle.js | RequestId=f569093e-1697-42ec-af4c-1d7ce11d64cc
+22-06-2026 22:29:08 [http-nio-8530-exec-2] INFO  6188c1a1-7fd7-42ac-b907-a3b0f0fdd9f0 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=6188c1a1-7fd7-42ac-b907-a3b0f0fdd9f0 | Tiempo=1 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-4] INFO  fc15f7ff-4bcd-49a8-a859-78bdab094ea7 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=fc15f7ff-4bcd-49a8-a859-78bdab094ea7 | Tiempo=1 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-5] INFO  f74e1bc0-b8c5-4fd9-80d5-f9266d620021 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-ui-standalone-preset.js | RequestId=f74e1bc0-b8c5-4fd9-80d5-f9266d620021
+22-06-2026 22:29:08 [http-nio-8530-exec-6] INFO  83455f26-71e4-4b25-9b80-6256419a0df5 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/swagger-initializer.js | RequestId=83455f26-71e4-4b25-9b80-6256419a0df5
+22-06-2026 22:29:08 [http-nio-8530-exec-3] INFO  f569093e-1697-42ec-af4c-1d7ce11d64cc com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=f569093e-1697-42ec-af4c-1d7ce11d64cc | Tiempo=1 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-5] INFO  f74e1bc0-b8c5-4fd9-80d5-f9266d620021 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=f74e1bc0-b8c5-4fd9-80d5-f9266d620021 | Tiempo=2 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-6] INFO  83455f26-71e4-4b25-9b80-6256419a0df5 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=83455f26-71e4-4b25-9b80-6256419a0df5 | Tiempo=39 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-8] INFO  83fc66f0-81b6-4664-aada-42bbb0292158 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs/swagger-config | RequestId=83fc66f0-81b6-4664-aada-42bbb0292158
+22-06-2026 22:29:08 [http-nio-8530-exec-7] INFO  00e96e47-d43e-4b34-b2e2-1949cccecae0 com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/swagger-ui/favicon-32x32.png | RequestId=00e96e47-d43e-4b34-b2e2-1949cccecae0
+22-06-2026 22:29:08 [http-nio-8530-exec-7] INFO  00e96e47-d43e-4b34-b2e2-1949cccecae0 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=00e96e47-d43e-4b34-b2e2-1949cccecae0 | Tiempo=2 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-8] INFO  83fc66f0-81b6-4664-aada-42bbb0292158 com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=83fc66f0-81b6-4664-aada-42bbb0292158 | Tiempo=29 ms
+22-06-2026 22:29:08 [http-nio-8530-exec-9] INFO  7452c1cd-a0d7-4ac1-aaae-6c3c17d75dbc com.cat.inv.configuaciones.FiltroPeticionLogeado - ➡️ Nueva petición | IP=0:0:0:0:0:0:0:1 | Método=GET | Endpoint=/v3/api-docs | RequestId=7452c1cd-a0d7-4ac1-aaae-6c3c17d75dbc
+22-06-2026 22:29:09 [http-nio-8530-exec-9] INFO  7452c1cd-a0d7-4ac1-aaae-6c3c17d75dbc org.springdoc.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 268 ms
+22-06-2026 22:29:09 [http-nio-8530-exec-9] INFO  7452c1cd-a0d7-4ac1-aaae-6c3c17d75dbc com.cat.inv.configuaciones.FiltroPeticionLogeado - ⬅️ Petición finalizada | RequestId=7452c1cd-a0d7-4ac1-aaae-6c3c17d75dbc | Tiempo=303 ms
+22-06-2026 22:33:29 [RMI TCP Connection(8)-127.0.0.1] INFO   org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+22-06-2026 22:33:29 [RMI TCP Connection(8)-127.0.0.1] INFO   org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8530"]
+22-06-2026 22:33:29 [RMI TCP Connection(8)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown initiated...
+22-06-2026 22:33:30 [RMI TCP Connection(8)-127.0.0.1] INFO   com.zaxxer.hikari.HikariDataSource - HikariPool-Catalogos - Shutdown completed.
