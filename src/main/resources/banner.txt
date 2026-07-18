@@ -9,5 +9,4 @@ Y88b  d88P 888  888 Y88b.  888  888 888 Y88..88P Y88b 888 Y88..88P      888   88
                                                       888                                                                                              
                                                  Y8b d88P                                                                                              
                                                   "Y88P"                                                                                               
-${spring.application.name}
-Sportado por Spring Boot ${spring-boot.version}
+Sportado por Spring Boot 

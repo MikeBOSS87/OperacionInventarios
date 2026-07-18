@@ -50,6 +50,11 @@
          <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
          <version>2.5.0</version>
       </dependency>
+      <dependency>
+          <groupId>com.cat.inv</groupId>
+          <artifactId>PeticionesInventario</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+      </dependency>
    </dependencies>
 	<build>
      <plugins>

@@ -27,7 +27,7 @@ public class CatalogoInv implements ServicioCatalogoInv{
 		
 		loger.info( "🔐 Validando credenciales..." );
 		
-		if( !"MDRG25014915".equals(cred.getToken()) || !"2501".equals(cred.getNip()) ){
+		if( !"MDRG25014915".equals( cred.getToken()) || !"2501".equals(cred.getNip()) ){
 
             loger.warn( "❌ Credenciales inválidas | token={} | nip={}", cred.getToken(), cred.getNip() );
 
@@ -36,13 +36,13 @@ public class CatalogoInv implements ServicioCatalogoInv{
 
         loger.info( "✔ Credenciales válidas, consultando catálogo..." );
 		
-		List<Catalogo> catalogo = repo.obtenerCatalogo()
+		List< Catalogo > lstCatalogo = repo.obtenerCatalogo()
 			    .stream()
 			    .map( MapearCatalogo::map )
 			    .collect( Collectors.toList() );
 		
-		loger.info( "📤 Consulta completada. Registros obtenidos: {}", catalogo.size() );
+		loger.info( "📤 Consulta completada. Registros obtenidos: {}", lstCatalogo.size() );
 		
-		return new RespuestaMSCatalogo( "Consulta realizada!!!", catalogo ) ;
+		return new RespuestaMSCatalogo( "Consulta realizada!!!", lstCatalogo ) ;
 	}
 }

@@ -30,9 +30,9 @@ public class ConsultaCatalogo {
 	        .withProcedureName( "CONSULTA_CAT" );       // <-- nombre del SP
    }
     
-   public List<Map<String, Object>> obtenerCatalogo() {
+   public List< Map< String, Object > > obtenerCatalogo(){
 	  loger.info( "Ejecutando SP de consulta a la BD" );
-      Map<String, Object> result = spConsultaCat.execute();
-      return( List<Map<String, Object>> ) result.get("PA_CATALOGO");
+      Map< String, Object > resultado = spConsultaCat.execute();
+      return( List< Map< String, Object > > ) resultado.get( "PA_CATALOGO" );
    }
 }
