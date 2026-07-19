@@ -1,3 +1,11 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
@@ -12,6 +20,20 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
+# Logs
+logs/
+*.log
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Spring Boot
+*.pid
+*.seed
 
 ### IntelliJ IDEA ###
 .idea
@@ -31,3 +53,19 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Maven Wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# Git
+.gitignore
+.gitattributes
