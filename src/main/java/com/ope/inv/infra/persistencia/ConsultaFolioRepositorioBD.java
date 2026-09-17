@@ -22,7 +22,7 @@ public class ConsultaFolioRepositorioBD implements ConsultaFolioRepositorio {
 	@Override
 	public String obtenerUltimoFolio() {
 		loger.debug(
-		        "Consultando último folio de INV_O_EXISTENCIAS"
+		        "Consultando último folio de la tabla"
 			    );
 		
 		String sql = """
