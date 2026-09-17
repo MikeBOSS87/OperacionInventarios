@@ -1,4 +1,4 @@
-package com.ope.inv.aplicacion.configuraciones;
+package com.ope.inv.aplicacion.conf;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -27,7 +27,7 @@ public class FiltroPeticiones implements Filter{
 
         // Generar ID único por request
         String requestId = UUID.randomUUID().toString();
-        MDC.put("requestId", requestId);
+        MDC.put( "requestId", requestId );
 
         String ip = req.getRemoteAddr();
         String metodo = req.getMethod();
