@@ -1,62 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.4</version>
+		<version>4.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	
-	<groupId>com.cat.inv</groupId>
-	<artifactId>CatalogosInventarios</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>CatalogosInventarios</name>
-
+	<groupId>com.ope.inv</groupId>
+	<artifactId>OperacionInventario</artifactId>
+	<version>1.0.0</version>
+	<name>OperacionInventario</name>
 	<properties>
-      <java.version>21</java.version>
-   </properties>
-   
+		<java.version>21</java.version>
+		<maven.compiler.source>21</maven.compiler.source>
+      <maven.compiler.target>21</maven.compiler.target>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 	<dependencies>
-		<dependency>
+	   <dependency>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-web-services</artifactId>
       </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
-		<!-- Source: https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 -->
-      <dependency>
-         <groupId>com.oracle.database.jdbc</groupId>
-         <artifactId>ojdbc11</artifactId>
-         <version>23.26.2.0.0</version>
-         <scope>compile</scope>
-      </dependency>
-      <!-- Logging profesional (SLF4J + Logback) -->
       <dependency>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-logging</artifactId>
       </dependency>
-      <!-- Para manejo global de errores (ya incluido en web, pero lo dejo explícito) -->
+      <dependency>
+         <groupId>org.firebirdsql.jdbc</groupId>
+         <artifactId>jaybird</artifactId>
+         <version>6.0.6</version>
+      </dependency>
+		<!-- Pruebas -->
       <dependency>
          <groupId>org.springframework.boot</groupId>
-         <artifactId>spring-boot-starter-validation</artifactId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
       </dependency>
-      <!-- Swagger / OpenAPI para Spring Boot 3 -->
-      <dependency>
-         <groupId>org.springdoc</groupId>
-         <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-         <version>2.5.0</version>
-      </dependency>
-      <dependency>
-          <groupId>com.cat.inv</groupId>
-          <artifactId>PeticionesInventario</artifactId>
-          <version>0.0.1-SNAPSHOT</version>
-      </dependency>
-   </dependencies>
-	<build>
+	</dependencies>
+   <build>
      <plugins>
          <plugin>
              <groupId>org.springframework.boot</groupId>
@@ -66,10 +53,9 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.11.0</version>
             <configuration>
                <source>21</source>
-                  <target>21</target>
+               <target>21</target>
             </configuration>
          </plugin>
      </plugins>
