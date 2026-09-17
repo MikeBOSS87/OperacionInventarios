@@ -1,4 +1,4 @@
-package com.ope.inv.aplicacion.conf;
+package com.ope.inv.conf;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -33,7 +33,7 @@ public class FiltroPeticiones implements Filter{
         String metodo = req.getMethod();
         String endpoint = req.getRequestURI();
 
-        loger.info("♠ Nueva petición | IP={} | Método={} | Endpoint={} | RequestId={}", ip, metodo, endpoint, requestId);
+        loger.info( "Nueva petición | IP={} | Método={} | Endpoint={} | RequestId={}", ip, metodo, endpoint, requestId );
 
         long inicio = System.currentTimeMillis();
 
@@ -42,7 +42,7 @@ public class FiltroPeticiones implements Filter{
         long fin = System.currentTimeMillis();
         long tiempo = fin - inicio;
 
-        loger.info("♣ Petición finalizada | RequestId={} | Tiempo={} ms", requestId, tiempo);
+        loger.info( "Petición finalizada | RequestId={} | Tiempo={} ms", requestId, tiempo );
 
         MDC.clear();
 	}
