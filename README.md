@@ -8,9 +8,61 @@ El flujo principal recibe una solicitud, transforma los datos de entrada al mode
 
 La solución sigue principios de **Arquitectura Hexagonal (Ports & Adapters)**, manteniendo el dominio independiente de la tecnología de persistencia y de los detalles de infraestructura.
 
----
+### Diagrama arquitectónico de referencia para implementación
 
-## 2. Características principales
+Este diagrama forma parte del diseño arquitectónico que define el Líder Técnico y proporciona a los programadores como guía de implementación. Su propósito es establecer claramente las capas, responsabilidades, puertos y adaptadores que deben respetarse durante el desarrollo.
+
+
+```text
+                    +---------------------+
+                    |     CLIENTE REST    |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |  INFRAESTRUCTURA    |
+                    |                     |
+                    | Controlador         |
+                    | Transformador       |
+                    | Exception Handler   |
+                    +----------+----------+
+                               |
+                               v
+                    +---------------------+
+                    |     APLICACIÓN      |
+                    |                     |
+                    | ProcesarExistencia  |
+                    |    @Transactional   |
+                    +----------+----------+
+                               |
+                    +----------+----------+
+                    |                     |
+                    v                     v
+          +-----------------+   +-----------------+
+          |     DOMINIO     |   |     PUERTOS     |
+          |                 |   |                 |
+          | Existencia      |   | ExistenciaRepo  |
+          | Detalle         |   | FolioRepo       |
+          | ConsolidadorSKU |   +--------+--------+
+          | GeneradorIdDet  |            |
+          +-----------------+            v
+                               +---------------------+
+                               |     ADAPTADORES     |
+                               |                     |
+                               | ExistenciaRepoBD    |
+                               | ConsultaFolioRepoBD |
+                               +----------+----------+
+                                          |
+                                          v
+                               +---------------------+
+                               |      FIREBIRD       |
+                               |                     |
+                               | INV_O_EXISTENCIAS   |
+                               | INV_O_EXIS_DET      |
+                               +---------------------+
+```
+
+---## 2. Características principales
 
 - API REST con Spring Boot.
 - Java 21.
@@ -665,6 +717,56 @@ Las excepciones del negocio no conocen HTTP. La infraestructura transforma esas 
 
 ---
 
+## Impacto de SOLID en la arquitectura
+
+Los principios **SOLID** sirven como criterio de diseño para mantener `OperacionInventario` desacoplado, mantenible y fácil de extender. En este proyecto no se aplican como teoría aislada: se reflejan principalmente en la separación entre dominio, aplicación e infraestructura, en el uso de puertos y adaptadores y en la responsabilidad específica de cada componente.
+
+### S — Single Responsibility Principle (Responsabilidad Única)
+
+Cada clase debe tener una razón principal para cambiar. En el proyecto se refleja en `ExistenciaTransformador` (transformación), `ProcesarExistenciaServicio` (caso de uso), `GeneradorFolio` (folio), `ConsolidadorSKU` (regla de consolidación), `GeneradorIdDetalle` (identificadores), `ExistenciaRepositorioBD` (persistencia) y `ManejadorExcepciones` (respuesta HTTP). Esto evita clases que concentren transformación, negocio, persistencia y HTTP.
+
+### O — Open/Closed Principle (Abierto/Cerrado)
+
+Los componentes deben poder extenderse sin modificar innecesariamente el código existente. `ProcesarExistenciaServicio` depende de `ExistenciaRepositorio`, no de `ExistenciaRepositorioBD`; por ello se puede incorporar otro adaptador de persistencia sin cambiar el caso de uso.
+
+### L — Liskov Substitution Principle (Sustitución de Liskov)
+
+Una implementación de un puerto debe poder sustituirse por otra respetando su contrato. Un repositorio Firebird y una futura implementación para Oracle pueden sustituirse desde el punto de vista de `ProcesarExistenciaServicio`, siempre que cumplan el contrato de `ExistenciaRepositorio`.
+
+### I — Interface Segregation Principle (Segregación de Interfaces)
+
+Las interfaces deben ser pequeñas y enfocadas. `ConsultaFolioRepositorio` y `ExistenciaRepositorio` representan capacidades concretas, evitando una interfaz enorme con operaciones no relacionadas.
+
+### D — Dependency Inversion Principle (Inversión de Dependencias)
+
+Los componentes de alto nivel dependen de abstracciones y no de detalles tecnológicos. `ProcesarExistenciaServicio` depende de `ExistenciaRepositorio`, mientras `ExistenciaRepositorioBD` conoce `JdbcTemplate` y Firebird. `GeneradorFolio` depende de `ConsultaFolioRepositorio`, mientras `ConsultaFolioRepositorioBD` contiene el detalle de acceso a la base de datos.
+
+### SOLID y el cambio de Oracle a Firebird
+
+La migración de Oracle a Firebird demuestra el valor del desacoplamiento: el dominio y la aplicación permanecen independientes de la base de datos y el cambio se concentra principalmente en infraestructura y configuración.
+
+```text
+                 DOMINIO
+                    |
+                 APLICACIÓN
+                    |
+                  PUERTOS
+                    |
+          +---------+---------+
+          |                   |
+     Adaptador Oracle    Adaptador Firebird
+          |                   |
+       Oracle             JdbcTemplate
+                              |
+                           Firebird
+```
+
+### SOLID como criterio para el Líder Técnico
+
+SOLID no significa crear interfaces o clases por obligación. En este proyecto debe utilizarse para mantener responsabilidades claras, dependencias invertidas, puertos pequeños y adaptadores sustituibles, evitando abstracciones innecesarias. En conjunto, **SOLID refuerza la arquitectura hexagonal** y ayuda a que las reglas de negocio permanezcan independientes de HTTP, Firebird, `JdbcTemplate`, controladores y otros detalles externos.
+
+---
+
 # 21. Estado actual
 
 Al cierre de esta etapa:
@@ -688,57 +790,6 @@ Al cierre de esta etapa:
 
 ---
 
-# 22. Resumen arquitectónico
-
-```text
-                    +---------------------+
-                    |     CLIENTE REST    |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |  INFRAESTRUCTURA    |
-                    |                     |
-                    | Controlador         |
-                    | Transformador       |
-                    | Exception Handler   |
-                    +----------+----------+
-                               |
-                               v
-                    +---------------------+
-                    |     APLICACIÓN      |
-                    |                     |
-                    | ProcesarExistencia  |
-                    |    @Transactional   |
-                    +----------+----------+
-                               |
-                    +----------+----------+
-                    |                     |
-                    v                     v
-          +-----------------+   +-----------------+
-          |     DOMINIO     |   |     PUERTOS     |
-          |                 |   |                 |
-          | Existencia      |   | ExistenciaRepo  |
-          | Detalle         |   | FolioRepo       |
-          | ConsolidadorSKU |   +--------+--------+
-          | GeneradorIdDet  |            |
-          +-----------------+            v
-                               +---------------------+
-                               |     ADAPTADORES     |
-                               |                     |
-                               | ExistenciaRepoBD    |
-                               | ConsultaFolioRepoBD |
-                               +----------+----------+
-                                          |
-                                          v
-                               +---------------------+
-                               |      FIREBIRD       |
-                               |                     |
-                               | INV_O_EXISTENCIAS   |
-                               | INV_O_EXIS_DET      |
-                               +---------------------+
-```
-
 ## Conclusión
 
 OperacionInventario queda estructurado para que las reglas de negocio estén separadas de los mecanismos técnicos.
@@ -748,7 +799,6 @@ La idea central de la arquitectura es:
 > **El dominio define qué necesita la aplicación; los puertos definen cómo se comunica con el exterior; los adaptadores implementan esas comunicaciones.**
 
 Esto permite mantener la lógica de negocio estable aunque cambien tecnologías como la base de datos, el mecanismo de mensajería o componentes de infraestructura.
-
 
 
 # OperacionInventario
