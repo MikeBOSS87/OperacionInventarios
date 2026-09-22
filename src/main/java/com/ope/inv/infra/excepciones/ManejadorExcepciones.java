@@ -19,7 +19,7 @@ public class ManejadorExcepciones {
 	public ResponseEntity< ErrorRespuesta > manejarDatoInvalido( 
 			DatoInvalidoExcepcion msj ) {
 		
-		loger.warn("Dato inválido recibido: {}", msj.getMessage());
+		loger.error("Dato inválido recibido: {}", msj.getMessage());
         ErrorRespuesta respuesta = new ErrorRespuesta(
                 "DATO_INVALIDO",
                 msj.getMessage()
@@ -34,7 +34,7 @@ public class ManejadorExcepciones {
 			HttpMessageNotReadableException msj
 			) {
 		
-		loger.warn("JSON inválido recibido", msj );
+		loger.error("JSON inválido recibido", msj );
 		ErrorRespuesta er = new ErrorRespuesta( 
 				"JSON_INVALIDO"
 				, "El formato de los datos no es valido" 

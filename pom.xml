@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.ope.inv</groupId>
 	<artifactId>OperacionInventario</artifactId>
-	<version>1.0.0</version>
+	<version>1.2.0</version>
 	<name>OperacionInventario</name>
 	<properties>
 		<java.version>21</java.version>
@@ -17,6 +17,9 @@
       <maven.compiler.target>21</maven.compiler.target>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+      <sonar.projectKey>MikeBOSS87_OperacionInventarios</sonar.projectKey>
+      <sonar.organization>MikeDRG</sonar.organization>
+      <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>
 	   <dependency>
@@ -58,6 +61,32 @@
                <target>21</target>
             </configuration>
          </plugin>
+         <!-- JaCoCo: mide cobertura de tests -->
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.12</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>report</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        <!-- SonarQube Scanner para Maven -->
+        <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>4.0.0.4121</version>
+        </plugin>
      </plugins>
     </build>
 </project>

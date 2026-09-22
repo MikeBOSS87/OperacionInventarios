@@ -62,7 +62,7 @@ Este diagrama forma parte del diseño arquitectónico que define el Líder Técn
                                +---------------------+
 ```
 
----## 2. Características principales
+## 2. Características principales
 
 - API REST con Spring Boot.
 - Java 21.
@@ -685,7 +685,9 @@ logging.level.root=INFO
 logging.level.com.ope.inv=DEBUG
 ```
 
-Esto permite observar el flujo del microservicio durante desarrollo y diagnóstico.
+- Esto permite observar el flujo del microservicio durante desarrollo y diagnóstico.
+- Adicional crea mediante el archivo xml de configuracion 2 archivos, uno ```app-info.log``` donde registra los sucesos y otro ```app-error.log``` donde registra errores de excepcion que suceda en el MicroServicio.
+- Una configuracion en los logs es la rotativa que con llevan, despues de 10 MB de capaciadad crea otro archivo con el siguiente formato ```dd-MM-yyyy```.
 
 ---
 
