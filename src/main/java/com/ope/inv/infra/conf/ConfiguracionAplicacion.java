@@ -22,8 +22,7 @@ public class ConfiguracionAplicacion {
 		return new ConsolidadorSKU() ;
 	}
 	
-	@Bean
-	public GeneradorFolio generadorFolio( ConsultaFolioRepositorio repo ) {
+	@Bean GeneradorFolio generadorFolio( ConsultaFolioRepositorio repo ) {
 		return new GeneradorFolio( repo ) ;
 	}
 	
