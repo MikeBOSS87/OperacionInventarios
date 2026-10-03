@@ -2,7 +2,8 @@ name: Compilar y enviar imagen Docker a1 GHCR
 
 on:
   push:
-    branches: [ "main" ] # Se ejecuta automáticamente cuando haces push a la rama principal
+    branches: [ "master" ] # Se ejecuta automáticamente cuando haces push a la rama principal
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
