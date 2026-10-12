@@ -19,16 +19,19 @@ public class ProcesarExistenciaServicio implements ProcesarExistencia {
 	private final GeneradorFolio generadorFolio;
     private final ConsolidadorSKU consolidadorSKU;
     private final GeneradorIdDetalle generadorIdDetalles ;
+    private final ClasificarCatalogoServicio ccs ;
     private final ExistenciaRepositorio existenciaRepositorio ;  
 
     public ProcesarExistenciaServicio(
             GeneradorFolio generadorFolio,
             ConsolidadorSKU consolidadorSKU,
+            ClasificarCatalogoServicio clasificarCatalogoServicio , 
             GeneradorIdDetalle generadorIdDetalles,
             ExistenciaRepositorio er
     		){
         this.generadorFolio = generadorFolio;
         this.consolidadorSKU = consolidadorSKU;
+        this.ccs = clasificarCatalogoServicio ;
         this.generadorIdDetalles = generadorIdDetalles;
         this.existenciaRepositorio = er ;
     }
@@ -54,6 +57,17 @@ public class ProcesarExistenciaServicio implements ProcesarExistencia {
         Existencia existenciaConsolidada =
                 consolidadorSKU.consolidar( entrada );
         loger.info( "Consolidación de SKU completada" );
+        
+        loger.info("Consultando catálogo de productos");
+        Existencia existenciaClasificada = ccs.clasificar(
+        		existenciaConsolidada
+                );
+
+        loger.info(
+                "Catálogo procesado. Catalogados: {}, No catalogados: {}",
+                existenciaClasificada.getDetalleDoc().size(),
+                existenciaClasificada.getDetalleNoCatalogado().size()
+        );
         
         loger.info( "Generando ID_DET" );
         Existencia existenciaProcesada =

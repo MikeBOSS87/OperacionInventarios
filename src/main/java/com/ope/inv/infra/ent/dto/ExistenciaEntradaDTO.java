@@ -6,9 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ExistenciaEntradaDTO implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1193457028845825846L;
 	
 	private String fecha;

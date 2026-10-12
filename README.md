@@ -4,9 +4,72 @@
 
 **OperacionInventario** es un microservicio REST para procesar operaciones de inventario.
 
-El flujo principal recibe una solicitud, transforma los datos de entrada al modelo de dominio, genera el folio, consolida los SKU, genera los identificadores de detalle y persiste la cabecera y sus detalles en Firebird.
+El flujo principal recibe una solicitud, transforma los datos de entrada al modelo de dominio, genera el folio, consolida los detalles por SKU y tipo de movimiento, consulta en bloque el catálogo, separa los detalles catalogados de los no catalogados, genera los identificadores de detalle y persiste en Firebird la cabecera y únicamente los detalles catalogados.
 
 La solución sigue principios de **Arquitectura Hexagonal (Ports & Adapters)**, manteniendo el dominio independiente de la tecnología de persistencia y de los detalles de infraestructura.
+
+
+## 2. Características principales
+
+- API REST con Spring Boot.
+- Java 21.
+- Arquitectura Hexagonal / Ports & Adapters.
+- Separación entre dominio, aplicación e infraestructura.
+- Persistencia mediante `JdbcTemplate`.
+- Base de datos Firebird.
+- Driver JDBC Jaybird 6.0.6.
+- Pool de conexiones HikariCP.
+- Generación de folios desde Java.
+- Consulta del último folio mediante un puerto de persistencia.
+- Consolidación de SKU por `SKU + Tipo`, antes de consultar el catálogo.
+- Consulta masiva del catálogo por los SKU únicos consolidados.
+- Asignación de `Id_Producto` desde el catálogo; el cliente ya no envía este identificador.
+- Clasificación entre `DetalleDoc` (catalogados) y `DetalleNoCatalogado` (no encontrados).
+- Persistencia exclusiva de los detalles catalogados.
+- Generación de `ID_DET`.
+- Inserción de una cabecera y múltiples detalles.
+- Transacciones mediante `@Transactional`.
+- Rollback automático ante errores.
+- Puerto `EventoPublicador` definido para desacoplar la futura publicación de eventos.
+- La integración concreta del adaptador Kafka y su publicación posterior al commit queda como siguiente etapa.
+- Manejo centralizado de excepciones REST.
+- Respuestas de error controladas sin exponer stack traces.
+- Logging para diagnóstico interno.
+
+---
+
+## 3. Tecnologías
+
+| Tecnología | Uso |
+|---|---|
+| Java 21 | Lenguaje |
+| Spring Boot | Framework principal |
+| Spring Web | API REST |
+| Spring JDBC | Acceso mediante `JdbcTemplate` |
+| JdbcTemplate | Ejecución de SQL |
+| HikariCP | Pool de conexiones |
+| Firebird | Base de datos |
+| Jaybird 6.0.6 | Driver JDBC |
+| Kafka | Integración de mensajería prevista; adaptador pendiente |
+| Maven | Gestión de dependencias |
+
+Dependencias relevantes:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>org.firebirdsql.jdbc</groupId>
+    <artifactId>jaybird</artifactId>
+    <version>6.0.6</version>
+</dependency>
+```
+
+> `spring-boot-starter-data-jdbc` no se utiliza. El proyecto trabaja directamente con `JdbcTemplate`.
+
 
 ### Diagrama arquitectónico de referencia para implementación
 
@@ -62,62 +125,6 @@ Este diagrama forma parte del diseño arquitectónico que define el Líder Técn
                                +---------------------+
 ```
 
-## 2. Características principales
-
-- API REST con Spring Boot.
-- Java 21.
-- Arquitectura Hexagonal / Ports & Adapters.
-- Separación entre dominio, aplicación e infraestructura.
-- Persistencia mediante `JdbcTemplate`.
-- Base de datos Firebird.
-- Driver JDBC Jaybird 6.0.6.
-- Pool de conexiones HikariCP.
-- Generación de folios desde Java.
-- Consulta del último folio mediante un puerto de persistencia.
-- Consolidación de productos/SKU.
-- Generación de `ID_DET`.
-- Inserción de una cabecera y múltiples detalles.
-- Transacciones mediante `@Transactional`.
-- Rollback automático ante errores.
-- Publicación hacia Kafka después del commit.
-- Manejo centralizado de excepciones REST.
-- Respuestas de error controladas sin exponer stack traces.
-- Logging para diagnóstico interno.
-
----
-
-## 3. Tecnologías
-
-| Tecnología | Uso |
-|---|---|
-| Java 21 | Lenguaje |
-| Spring Boot | Framework principal |
-| Spring Web | API REST |
-| Spring JDBC | Acceso mediante `JdbcTemplate` |
-| JdbcTemplate | Ejecución de SQL |
-| HikariCP | Pool de conexiones |
-| Firebird | Base de datos |
-| Jaybird 6.0.6 | Driver JDBC |
-| Kafka | Mensajería después del commit |
-| Maven | Gestión de dependencias |
-
-Dependencias relevantes:
-
-```xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-jdbc</artifactId>
-</dependency>
-
-<dependency>
-    <groupId>org.firebirdsql.jdbc</groupId>
-    <artifactId>jaybird</artifactId>
-    <version>6.0.6</version>
-</dependency>
-```
-
-> `spring-boot-starter-data-jdbc` no se utiliza. El proyecto trabaja directamente con `JdbcTemplate`.
-
 ---
 
 ## 4. Base de datos
@@ -140,7 +147,7 @@ Campos utilizados:
 ```text
 ID_UN_MED
 ID_SKU_CODIGO
-ID_OBJ_ALM
+ID_PRODUCTO
 FECHA_DOC
 FOLIO
 ID_DET
@@ -187,7 +194,7 @@ public class DetalleExistencia implements Serializable {
 
     private Integer Id_Un_Medida;
     private String Id_SKU_Codigo;
-    private Integer Id_Obj_Alm;
+    private Integer Id_Producto;
     private LocalDateTime FechaDoc;
     private String Folio;
     private Integer Id_Det;
@@ -210,13 +217,18 @@ flowchart TD
     F --> G[ConsultaFolioRepositorio]
     G --> H[ConsultaFolioRepositorioBD]
     H --> I[(Firebird)]
-    E --> J[ConsolidadorSKU]
-    J --> K[GeneradorIdDetalle]
-    K --> L[ExistenciaRepositorio]
-    L --> M[ExistenciaRepositorioBD]
+    E --> J[ConsolidadorSKU: SKU + Tipo]
+    J --> K[ClasificarCatalogoServicio]
+    K --> L[ConsultaProductoRepositorio]
+    L --> M[ConsultaProductoRepositorioBD]
     M --> I
-    E --> N[Commit]
-    N --> O[Kafka]
+    K --> N[Catalogados / No catalogados]
+    N --> O[GeneradorIdDetalle]
+    O --> P[ExistenciaRepositorio]
+    P --> Q[ExistenciaRepositorioBD]
+    Q --> I
+    Q --> R[Commit transaccional]
+    R -. siguiente etapa .-> S[EventoPublicador / Kafka]
 ```
 
 ---
@@ -228,20 +240,32 @@ com.ope.inv
 │
 ├── dominio
 │   ├── ...
+│   ├── modelo
+│   │   ├── ClaveSKU.java
+│   │   ├── Existencia.java
+│   │   ├── DetalleExistencia.java
+│   │   └── ObjetoNoCatalogado.java
 │   ├── servicio
-│   │   ├── ConsolidadorSKU
-│   │   └── GeneradorIdDetalle
+│   │   ├── ConsolidadorSKU.java
+│   │   ├── GeneradorFolio.java
+│   │   └── GeneradorIdDetalle.java
 │   │
-│   ├── puerto
-│   │   ├── ConsultaFolioRepositorio
-│   │   └── ExistenciaRepositorio
+│   ├── puertos
+│   │   ├── ent
+│   │   │   └── ProcesarExistencia
+│   │   └── sal
+│   │       ├── ConsultaFolioRepositorio
+│   │       ├── ConsultaProductoRepositorio
+│   │       ├── EventoPublicador
+│   │       └── ExistenciaRepositorio
 │   │
 │   └── excepciones
 │       └── DatoInvalidoException.java
 │
 ├── aplicacion
 │   └── servicio
-│       └── ProcesarExistenciaServicio.java
+│       ├── ProcesarExistenciaServicio.java
+│       └── ClasificarCatalogoServicio.java
 │
 └── infraestructura
     ├── entrada
@@ -249,6 +273,7 @@ com.ope.inv
     │
     ├── persistencia
     │   ├── ConsultaFolioRepositorioBD.java
+    │   ├── ConsultaProductoRepositorioBD.java
     │   └── ExistenciaRepositorioBD.java
     │
     └── excepciones
@@ -281,17 +306,21 @@ Recibir existencia
       ↓
 Generar folio
       ↓
-Consolidar SKU
+Generar folio
       ↓
-Generar ID_DET
+Consolidar por SKU + Tipo
       ↓
-Completar información
+Consultar catálogo en bloque
       ↓
-Guardar cabecera y detalles
+Separar catalogados y no catalogados
+      ↓
+Generar ID_DET para detalles catalogados
+      ↓
+Guardar cabecera y solo detalles catalogados
       ↓
 Commit
       ↓
-Publicar Kafka
+Publicación Kafka (integración pendiente)
 ```
 
 La transacción se controla mediante `@Transactional`.
@@ -355,7 +384,7 @@ flowchart LR
     BD --> DB
     FOLIOBD --> DB
 
-    SERVICIO --> KAFKA
+    SERVICIO -. integración pendiente .-> KAFKA
 
     EX --> HANDLER
     HANDLER --> CLIENTE
@@ -468,8 +497,8 @@ flowchart TD
     E --> F{¿Todo correcto?}
     F -->|Sí| G[COMMIT]
     F -->|No| H[ROLLBACK]
-    G --> I[Publicar Kafka]
-    H --> J[Fin con error]
+    G --> I[Disponible para publicación posterior]
+    H --> J[Fin con error; no publicar]
 ```
 
 Si un detalle falla:
@@ -540,6 +569,69 @@ Principio utilizado durante el desarrollo:
 > **"Si ya lo contabilicé (lo vi), ¿por qué tendría que volver a calcularlo si ya lo tengo?"**
 
 Las estructuras de búsqueda como `Map` pueden utilizarse cuando permiten evitar recorridos repetidos.
+
+---
+
+# 14.1. Validación y clasificación contra el catálogo
+
+Después de consolidar, `ClasificarCatalogoServicio` obtiene la lista de SKU únicos y consulta el puerto `ConsultaProductoRepositorio` una sola vez. El adaptador `ConsultaProductoRepositorioBD` implementa la consulta en Firebird contra `INV_C_OBJETOS` y devuelve la relación SKU → `ID_PRODUCTO`.
+
+El campo `Id_Producto` **no se recibe en la petición de entrada**. Se completa internamente a partir del catálogo para cada detalle encontrado.
+
+El resultado se separa en dos colecciones:
+
+- `DetalleDoc`: contiene solamente los detalles cuyo SKU se encontró en catálogo. Estos son los únicos detalles que se insertan en `INV_O_EXIS_DET`.
+- `DetalleNoCatalogado`: contiene los SKU no encontrados y sus cantidades consolidadas. Se conservan en la respuesta para su seguimiento, pero no se insertan como detalles porque no tienen la referencia de catálogo requerida.
+
+La cabecera de la existencia se registra con su folio. Si todos los SKU fueran no catalogados, la regla actual permite que la cabecera no tenga detalles insertados; este caso debe seguir considerándose en las pruebas funcionales.
+
+### Ejemplo de clasificación
+
+Si la entrada contiene:
+
+| SKU | Cantidades recibidas | Estado en catálogo |
+|---|---:|---|
+| `SKU-5002` | 1 + 1 + 1 | Catalogado |
+| `SKU-4003` | 1 | Catalogado |
+| `SKU-6003` | 1 | Catalogado |
+| `SKU-88` | 2 | No catalogado |
+| `SKU-010` | 4 + 11 | No catalogado |
+
+El resultado esperado es:
+
+- `DetalleDoc`: `SKU-5002` con cantidad 3, `SKU-4003` con cantidad 1 y `SKU-6003` con cantidad 1.
+- `DetalleNoCatalogado`: `SKU-88` con cantidad 2 y `SKU-010` con cantidad 15.
+
+Los SKU no catalogados no se vuelven a consolidar después de la clasificación: la consolidación inicial ya agrupó los duplicados por `SKU + Tipo`.
+
+### Flujo resumido
+
+```text
+JSON de entrada (sin Id_Producto)
+              ↓
+Consolidar por SKU + Tipo
+              ↓
+Consulta masiva de SKU únicos
+              ↓
+       ┌──────┴──────┐
+       ↓             ↓
+   Catalogado    No catalogado
+       ↓             ↓
+Completar         DetalleNoCatalogado
+Id_Producto       (con cantidad consolidada)
+       ↓             ↓
+DetalleDoc       No insertar en INV_O_EXIS_DET
+       ↓
+Insertar en INV_O_EXIS_DET
+```
+
+### Reglas validadas en pruebas manuales
+
+- Los SKU repetidos con el mismo tipo se consolidan sumando sus cantidades.
+- Un SKU catalogado se conserva como detalle independiente de otros SKU, aunque compartan el mismo `Id_Producto`.
+- Los SKU no encontrados se excluyen de `DetalleDoc` y se incluyen en `DetalleNoCatalogado`.
+- En el escenario probado con ocho registros, el resultado fue de tres detalles catalogados (`SKU-5002` = 3, `SKU-4003` = 1 y `SKU-6003` = 1) y dos no catalogados (`SKU-88` = 2 y `SKU-010` = 15).
+- La verificación del JSON confirma la clasificación y consolidación. La persistencia debe verificarse consultando la tabla de detalle para confirmar que los no catalogados no se insertaron.
 
 ---
 
@@ -711,7 +803,7 @@ Se utiliza `@Transactional` para asegurar atomicidad.
 
 ### Kafka después del commit
 
-La publicación hacia Kafka se plantea después de completar correctamente la persistencia.
+El puerto `EventoPublicador` ya está definido para mantener la mensajería desacoplada. En la versión documentada, el adaptador concreto Kafka y la llamada de publicación posterior al commit aún deben integrarse. Cuando se implemente, debe garantizarse que un fallo de transacción no publique un evento de éxito.
 
 ### Excepciones separadas por responsabilidad
 
@@ -780,15 +872,18 @@ Al cierre de esta etapa:
 - `JdbcTemplate` ejecuta consultas e inserciones.
 - Se obtiene el último folio desde Firebird.
 - Se genera el nuevo folio.
-- Se consolidan los SKU.
-- Se generan los identificadores de detalle.
-- Se inserta la cabecera.
-- Se insertan los detalles.
+- Se consolidan los SKU por SKU + tipo de movimiento.
+- Se consulta el catálogo en bloque después de consolidar.
+- `Id_Producto` se obtiene del catálogo, no de la petición de entrada.
+- Se separan los detalles catalogados de `DetalleNoCatalogado`.
+- Solo los detalles catalogados se insertan en `INV_O_EXIS_DET`.
+- Se generan los identificadores de detalle para los detalles que se procesan como catalogados.
+- Se inserta la cabecera y los detalles válidos.
 - La operación está protegida por transacción.
 - Se implementó manejo global de excepciones.
 - Los errores REST tienen un formato controlado.
 - El stack trace no se expone al consumidor.
-- Kafka queda contemplado para publicación posterior al commit.
+- Existe el puerto `EventoPublicador`; falta completar el adaptador Kafka y verificar la publicación posterior al commit.
 
 ---
 

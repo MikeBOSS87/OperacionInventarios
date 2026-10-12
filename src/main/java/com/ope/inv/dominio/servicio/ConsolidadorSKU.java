@@ -7,7 +7,7 @@ import com.ope.inv.dominio.modelo.ClaveSKU;
 import com.ope.inv.dominio.modelo.DetalleExistencia;
 import com.ope.inv.dominio.modelo.Existencia;
 
-public class ConsolidadorSKU {
+public class ConsolidadorSKU{
 	
 	public Existencia consolidar( Existencia e ) {
 		
@@ -21,7 +21,7 @@ public class ConsolidadorSKU {
 				.collect(
 					Collectors.toMap(
 						det -> new ClaveSKU(
-								det.getId_Obj_Alm(),
+								det.getId_SKU_Codigo(),
 								det.getTipo()
 						),
 						det -> det,

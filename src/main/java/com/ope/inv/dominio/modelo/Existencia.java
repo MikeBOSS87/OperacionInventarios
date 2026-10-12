@@ -16,6 +16,7 @@ public class Existencia implements Serializable{
    private LocalDateTime Fecha_Doc ;
    private String Folio ; 
    private List< DetalleExistencia > DetalleDoc ;
+   private List< noCatalogados > DetalleNoCatalogado ;
    
    /**
     * @return the id_Empleado
@@ -73,12 +74,27 @@ public class Existencia implements Serializable{
     * @return the detalleDoc
     */
    public List<DetalleExistencia> getDetalleDoc() {
-	return DetalleDoc;
+	   return DetalleDoc;
    }
+   
    /**
     * @param detalleDoc the detalleDoc to set
     */
-   public void setDetalleDoc(List<DetalleExistencia> detalleDoc) {
-	DetalleDoc = detalleDoc;
+   public void setDetalleDoc( List<DetalleExistencia> detalleDoc ){
+	   DetalleDoc = detalleDoc;
+   }
+   
+   /**
+    * @return the detalleNoCatalogado
+    */
+   public List< noCatalogados > getDetalleNoCatalogado() {
+	   return DetalleNoCatalogado;
+   }
+   
+   /**
+    * @param detalleNoCatalogado the detalleNoCatalogado to set
+    */
+   public void setDetalleNoCatalogado( List< noCatalogados > detalleNoCatalogado ){
+	   DetalleNoCatalogado = detalleNoCatalogado;
    }  
 }

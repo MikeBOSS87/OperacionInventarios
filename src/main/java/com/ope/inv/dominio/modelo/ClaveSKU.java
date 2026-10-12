@@ -1,6 +1,6 @@
 package com.ope.inv.dominio.modelo;
 
 public record ClaveSKU(
-		Integer Id_Obj_Alm ,
+		String Id_SKU ,
 		Integer Tipo 
 ) {}

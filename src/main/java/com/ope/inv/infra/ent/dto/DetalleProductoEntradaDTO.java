@@ -1,14 +1,10 @@
 package com.ope.inv.infra.ent.dto;
 
 import java.io.Serializable;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DetalleProductoEntradaDTO implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4834020001503746271L;
 	
 	@JsonProperty( "Id_Uni_Medida" )
