@@ -34,8 +34,6 @@ public class ConsolidadorSKU{
 					)
 				) ;
 		
-		
-		
 		e.setDetalleDoc(
 				detallesAgrupados.values()
 				.stream()

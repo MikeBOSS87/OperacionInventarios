@@ -2,13 +2,11 @@ package com.ope.inv.dominio.modelo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class noCatalogados implements Serializable {
 
 	private static final long serialVersionUID = -5766654786832590730L;
 	
-	@JsonProperty("SKU")
 	private String Id_SKU_Codigo ;
 	private BigDecimal Cantidad ;
 	

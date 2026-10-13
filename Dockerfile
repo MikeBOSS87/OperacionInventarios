@@ -6,19 +6,19 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
 
-# Copiar código fuente y compilar omitiendo tests
+# Copiar código fuente y compilar realizando los tests
 COPY src ./src
-RUN mvn clean package -DskipTests
+RUN mvn clean package
 
 # --- ETAPA 2: Imagen de ejecución ligera ---
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
 
 # Copiar el archivo .jar generado en la primera etapa
-COPY --from=builder /app/target/*.jar CntlInv.jar
+COPY --from=builder /app/target/*.jar OpeInv.jar
 
 # Puerto de la aplicación Spring Boot
 EXPOSE 8530
 
 # Comando para ejecutar la aplicación
-ENTRYPOINT ["java", "-XX:+UseG1GC", "-jar", "CntlInv.jar"]
+ENTRYPOINT ["java", "-XX:+UseG1GC", "-jar", "OpeInv.jar"]

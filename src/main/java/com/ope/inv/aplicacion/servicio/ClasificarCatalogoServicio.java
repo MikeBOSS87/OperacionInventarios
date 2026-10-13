@@ -39,15 +39,15 @@ public class ClasificarCatalogoServicio {
         for( DetalleExistencia detalle : existencia.getDetalleDoc() ) {
 
             Integer idProducto =
-                    productosPorSku.get(detalle.getId_SKU_Codigo());
+                    productosPorSku.get( detalle.getId_SKU_Codigo() );
 
-            if (idProducto != null) {
-                detalle.setId_Producto(idProducto);
-                detallesCatalogados.add(detalle);
-                continue;	
+            if( idProducto != null ){
+                detalle.setId_Producto( idProducto );
+                detallesCatalogados.add( detalle );
+                continue;
             }
 
-            if (skusNoCatalogados.add(detalle.getId_SKU_Codigo())) {
+            if( skusNoCatalogados.add( detalle.getId_SKU_Codigo() ) ){
                 objetosNoCatalogados.add(
                         new noCatalogados(
                                 detalle.getId_SKU_Codigo(),
