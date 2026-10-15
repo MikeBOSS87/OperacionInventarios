@@ -83,9 +83,6 @@ public class ExistenciaTransformador {
     	detalleProducto.setId_SKU_Codigo(
                 detalleEntrada.getSKU()
         );
-    	detalleProducto.setId_Producto(
-        		detalleEntrada.getIdProducto()
-        );
     	
     	detalleProducto.setTipo(
                 convertirTipo( detalleEntrada.getTipo() )

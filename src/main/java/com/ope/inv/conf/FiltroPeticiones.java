@@ -33,7 +33,7 @@ public class FiltroPeticiones implements Filter{
         String metodo = req.getMethod();
         String endpoint = req.getRequestURI();
 
-        loger.info( "Nueva petición | IP={} | Método={} | Endpoint={} | RequestId={}", ip, metodo, endpoint, requestId );
+        loger.info( "Petición entrante | IP={} | Método={} | Endpoint={} | RequestId={}", ip, metodo, endpoint, requestId );
 
         long inicio = System.currentTimeMillis();
 

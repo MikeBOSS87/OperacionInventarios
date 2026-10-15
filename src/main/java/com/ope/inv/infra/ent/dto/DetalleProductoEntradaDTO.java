@@ -2,21 +2,23 @@ package com.ope.inv.infra.ent.dto;
 
 import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 public class DetalleProductoEntradaDTO implements Serializable {
 	
 	private static final long serialVersionUID = 4834020001503746271L;
 	
+	@Schema(description = "Identificador de la unidad de medida", example = "1", requiredMode = Schema.RequiredMode.REQUIRED)
 	@JsonProperty( "Id_Uni_Medida" )
 	private Integer idUnidadMedida;
 	
+	@Schema(description = "Código SKU del artículo", example = "SKU-5002", requiredMode = Schema.RequiredMode.REQUIRED)
 	private String SKU;
-	
-	@JsonProperty( "Id_Producto" )
-    private Integer idProducto;
     
+    @Schema(description = "Tipo de movimiento admitido: Entrada o Salida", example = "Entrada", allowableValues = {"Entrada", "Salida"}, requiredMode = Schema.RequiredMode.REQUIRED)
     private String Tipo;
     
+    @Schema(description = "Cantidad del SKU en la unidad de medida indicada", example = "3", minimum = "1", requiredMode = Schema.RequiredMode.REQUIRED)
     private Integer Cantidades;
     
 	/**
@@ -33,7 +35,7 @@ public class DetalleProductoEntradaDTO implements Serializable {
 	}
 	
 	/**
-	 * @return the sKU
+	 * @return the sku
 	 */
 	public String getSKU() {
 		return SKU;
@@ -41,21 +43,8 @@ public class DetalleProductoEntradaDTO implements Serializable {
 	/**
 	 * @param sKU the sKU to set
 	 */
-	public void setSKU(String sKU) {
-		SKU = sKU;
-	}
-	
-	/**
-	 * @return the id_producto
-	 */
-	public Integer getIdProducto() {
-		return idProducto;
-	}
-	/**
-	 * @param id_producto the id_producto to set
-	 */
-	public void setIdProducto(Integer idProducto) {
-		this.idProducto = idProducto ;
+	public void setSKU( String sku ) {
+		SKU = sku;
 	}
 	
 	/**

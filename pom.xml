@@ -38,6 +38,12 @@
          <groupId>org.firebirdsql.jdbc</groupId>
          <artifactId>jaybird</artifactId>
       </dependency>
+      <!-- Documentación OpenAPI / Swagger UI compatible con Spring Boot 4 -->
+      <dependency>
+         <groupId>org.springdoc</groupId>
+         <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+         <version>3.0.1</version>
+      </dependency>
 		<!-- Pruebas -->
       <dependency>
          <groupId>org.springframework.boot</groupId>
