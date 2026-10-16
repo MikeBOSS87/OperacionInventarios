@@ -51,8 +51,13 @@ public class ModeloTest{
         assertEquals( 2, det.getId_Un_Medida() );
         assertEquals( 1, det.getTipo() );
 
-        // noCatalogados (ajusta los métodos según los atributos que tenga tu clase)
+        // No catalogados
         noCatalogados nc = new noCatalogados( "SKU-TEST-NoExiste", BigDecimal.TWO );
+        nc.setId_SKU_Codigo("SKU-NC-01");
+        nc.setCantidad( BigDecimal.valueOf(5) ) ; 
+        
         assertNotNull(nc);
+        assertEquals( "SKU-NC-01", nc.getId_SKU_Codigo() );
+        assertEquals(BigDecimal.valueOf(5), nc.getCantidad());
     }
 }

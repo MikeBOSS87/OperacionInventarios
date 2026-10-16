@@ -11,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -34,9 +35,9 @@ public class ClasificarCatalogoServicioTest {
 		
 		Existencia existenciaMock = new Existencia();
         DetalleExistencia detalle = new DetalleExistencia();
-        detalle.setId_SKU_Codigo("SKU-INEXISTENTE");
-        existenciaMock.setDetalleDoc(List.of(detalle));
-        existenciaMock.setDetalleNoCatalogado(new ArrayList<>());
+        
+        detalle.setId_SKU_Codigo( "SKU-INEXISTENTE" );
+        existenciaMock.setDetalleDoc(List.of());
 
         // Simulamos que el repositorio regresa un mapa vacío (ningún SKU coincide)
         when(consultaProductoRepositorio.consultarPorSku(any())).thenReturn(new HashMap<>());
@@ -45,4 +46,16 @@ public class ClasificarCatalogoServicioTest {
 
         assertNotNull(existenciaMock.getDetalleNoCatalogado());
 	}
+	
+	@Test
+    @DisplayName("Debería retornar si la lista de detalles es nula o vacía")
+    void testClasificarListaVaciaONula() {
+        
+		Existencia existenciaMock = new Existencia();
+        existenciaMock.setDetalleDoc( new ArrayList<>() );
+
+        assertDoesNotThrow(() -> {
+            clasificarCatalogoServicio.clasificar(existenciaMock);
+        });
+    }
 }
