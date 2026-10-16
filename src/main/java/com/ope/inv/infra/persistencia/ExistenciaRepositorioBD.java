@@ -16,10 +16,10 @@ public class ExistenciaRepositorioBD implements ExistenciaRepositorio {
 			ExistenciaRepositorioBD.class
         );
 	
-	private final JdbcTemplate jdbcTemplate;
+	private final JdbcTemplate ejecutor;
 
-    public ExistenciaRepositorioBD( JdbcTemplate jdbcTemplate ) {
-        this.jdbcTemplate = jdbcTemplate;
+    public ExistenciaRepositorioBD( JdbcTemplate TemplateJDBC ) {
+        this.ejecutor = TemplateJDBC;
     }
 	
 	@Override
@@ -34,7 +34,7 @@ public class ExistenciaRepositorioBD implements ExistenciaRepositorio {
                 VALUES (?, ?, ?, ?)
                 """;
 
-        jdbcTemplate.update(
+        ejecutor.update(
                 sql,
                 existencia.getId_Empleado(),
                 existencia.getId_Sucursal(),
@@ -60,7 +60,7 @@ public class ExistenciaRepositorioBD implements ExistenciaRepositorio {
                 """;
 
         for( DetalleExistencia detalle : existencia.getDetalleDoc() ) {
-            jdbcTemplate.update(
+            ejecutor.update(
                     sqlDetalle,
                     detalle.getId_Un_Medida(),
                     detalle.getId_SKU_Codigo(),
